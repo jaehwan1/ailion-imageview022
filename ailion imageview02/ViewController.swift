@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         if(count>5){
             count = 1
         }
+        
         ailion.image = UIImage(named: "frame\(count).png" )
         countlabel.text = "frame\(count).png"    }
     
