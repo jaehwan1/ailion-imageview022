@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var countlabel: UILabel!
     
-    var count = 1
+    
+    var check = true, count = 1
     
     @IBOutlet weak var ailion: UIImageView!
     override func viewDidLoad() {
@@ -22,16 +23,25 @@ class ViewController: UIViewController {
         countlabel.text = "frame\(count).png"
     }
     @IBAction func button(_ sender: Any) {
-       count+=1
         
-        if(count>5){
-            count = 1
+        if count == 5 {
+            check = false
+        } else if count == 1 {
+            check = true
         }
+        
+        if check == true {
+            count+=1
+        } else if check == false {
+            count-=1
+        }
+        
         
         ailion.image = UIImage(named: "frame\(count).png" )
         countlabel.text = "frame\(count).png"    }
     
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
